@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Car Rental</h1>
+    <p>Система управления арендой автомобилей</p>
+</header>
+
+<main>
+
+    <section>
+        <div class="section-header">
+            <h2>Автомобили</h2>
+            <button onclick="showCarForm()">
+                Добавить автомобиль
+            </button>
+        </div>
+
+        <div id="car-form" class="form hidden">
+
+            <input id="car-brand" placeholder="Марка">
+
+            <input id="car-model" placeholder="Модель">
+
+            <input id="car-vin" placeholder="VIN">
+
+            <select id="car-category">
+                <option value="1">Economy</option>
+                <option value="2">Comfort</option>
+                <option value="3">Premium</option>
+                <option value="4">Sport</option>
+            </select>
+
+            <input
+                id="car-price"
+                type="number"
+                placeholder="Цена за день">
+
+            <button onclick="createCar()">
+                Сохранить
+            </button>
+
+        </div>
+
+        <div id="cars">
+            Загрузка автомобилей...
+        </div>
+    </section>
+
+
+    <section>
+        <div class="section-header">
+            <h2>Пользователи</h2>
+            <button onclick="showUserForm()">Добавить пользователя</button>
+        </div>
+
+        <div id="user-form" class="form hidden">
+            <input id="user-username" placeholder="Имя пользователя">
+            <input id="user-password" placeholder="Пароль">
+            <input id="user-birthdate" type="date">
+            <input id="user-license-date" type="date">
+
+            <select id="user-role">
+                <option value="1">Client</option>
+                <option value="2">Manager</option>
+                <option value="3">Admin</option>
+            </select>
+
+            <button onclick="createUser()">Сохранить</button>
+        </div>
+
+        <div id="users">
+            Загрузка пользователей...
+        </div>
+    </section>
+
+
+    <section>
+        <div class="section-header">
+            <h2>Аренды</h2>
+            <button onclick="showRentalForm()">Создать аренду</button>
+        </div>
+
+        <div id="rental-form" class="form hidden">
+            <input
+                id="rental-client"
+                type="number"
+                placeholder="ID клиента">
+
+            <input
+                id="rental-car"
+                type="number"
+                placeholder="ID автомобиля">
+
+            <input
+                id="rental-start"
+                type="date">
+
+            <input
+                id="rental-end"
+                type="date">
+
+            <button onclick="createRental()">
+                Сохранить
+            </button>
+        </div>
+
+        <div id="rentals">
+            Загрузка аренд...
+        </div>
+    </section>
+
+
+    <section>
+        <div class="section-header">
+            <h2>Договоры</h2>
+        </div>
+
+        <div id="agreements">
+            Загрузка договоров...
+        </div>
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
